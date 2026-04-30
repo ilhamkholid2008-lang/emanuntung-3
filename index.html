@@ -1,0 +1,349 @@
+\<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>eManuntung — Portal Kepegawaian Kota Balikpapan</title>
+
+  <!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;800;900&display=swap" rel="stylesheet"/>
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<!-- Custom Cursor -->
+<div class="cursor" id="cur"></div>
+<div class="cursor-ring" id="curRing"></div>
+
+<!-- ══════════════════════════
+     NAVBAR
+══════════════════════════ -->
+<nav id="nav">
+  <a href="#" class="nav-brand">
+     <img src="logoemanuntung.svg" style="width:50px;height:50px;margin-right:10px">
+    <span class="nav-wordmark">e<em>Manuntung</em></span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#home">Beranda</a></li>
+    <li><a href="#fitur">Fitur</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="#unduh">Unduh</a></li>
+  </ul>
+
+  <a href="login.html" class="nav-action">
+    <i class="fa-solid fa-right-to-bracket"></i> Masuk
+  </a>
+</nav>
+
+<!-- ══════════════════════════
+     HERO
+══════════════════════════ -->
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-scanlines"></div>
+  <div class="hero-bg-text">EM</div>
+
+  <div class="v-lines">
+    <div class="v-line"></div>
+    <div class="v-line"></div>
+    <div class="v-line"></div>
+    <div class="v-line"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-label">
+        <i class="fa-solid fa-circle" style="font-size:5px"></i>  
+      </div>
+
+      <h1 class="hero-title">
+        <span class="line">PORTAL</span>
+        <span class="line">LAYANAN</span>
+        <span class="line">KEPEGAWAIAN</span>
+      </h1>
+
+      <div class="hero-divider"></div>
+
+      <p class="hero-desc">
+        Satu platform terpadu untuk seluruh kebutuhan ASN Balikpapan —
+        dari pelaporan kinerja, presensi GPS, pengelolaan surat,
+        hingga akses data kepegawaian secara real-time.
+      </p>
+
+      <div class="hero-cta-row">
+        <a href="#unduh" class="btn-main">
+          <i class="fa-brands fa-google-play"></i>
+          <span>Unduh Aplikasi</span>
+        </a>
+        <a href="#fitur" class="btn-ghost">
+          Jelajahi Fitur
+          <i class="fa-solid fa-arrow-right" style="font-size:9px"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Panel kanan: gambar -->
+    <div class="hero-right" id="heroRight">
+      <div class="hero-img-wrap" id="heroImgWrap">
+        <img src="gambar.png" alt="ASN eManuntung" class="hero-img" ;/>
+
+        <div class="h-badge h-badge-1">
+          <div class="h-badge-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div class="h-badge-text">
+            <span class="h-badge-sub">Presensi GPS</span>
+            <span class="h-badge-main">Aktif & Terverifikasi</span>
+          </div>
+        </div>
+
+        <div class="h-badge h-badge-2">
+          <div class="h-badge-icon" style="background:linear-gradient(135deg,#4f8ef7,#1a5fd4)"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="h-badge-text">
+            <span class="h-badge-sub">eKinerja</span>
+            <span class="h-badge-main">Real-time Update</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  <div class="scroll-hint">
+    
+
+  <div class="scroll-hint">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     FITUR
+══════════════════════════ -->
+<section id="fitur">
+  <div class="section-intro sr">
+    <div>
+      <div class="s-eyebrow">Fitur Unggulan</div>
+      <h2 class="s-title">SEMUA<br>LAYANAN<br><em>ASN</em></h2>
+    </div>
+    <p class="s-body">
+      Berbagai fitur terintegrasi untuk mendukung kinerja dan layanan
+      kepegawaian ASN Kota Balikpapan — semuanya dalam genggaman.
+    </p>
+  </div>
+
+  <div class="feat-rail" id="featRail">
+
+    <div class="feat-item">
+      <div class="feat-item-bg"><i class="fa-solid fa-chart-line" style="color:#4f8ef7"></i></div>
+      <div class="feat-top-line" style="background:linear-gradient(90deg,#4f8ef7,#1a5fd4)"></div>
+      <div class="feat-num">01 — KINERJA</div>
+      <div class="feat-icon-wrap"><i class="fa-solid fa-chart-line" style="color:#4f8ef7"></i></div>
+      <div class="feat-cat">Produktivitas</div>
+      <h3 class="feat-name">eKINERJA</h3>
+      <p class="feat-body">Integrasi pelaporan kinerja ASN secara digital dan real-time.</p>
+    </div>
+
+    <div class="feat-item">
+      <div class="feat-item-bg"><i class="fa-solid fa-pen-nib" style="color:#f7724f"></i></div>
+      <div class="feat-top-line" style="background:linear-gradient(90deg,#f7724f,#d43b1a)"></div>
+      <div class="feat-num">02 — SURAT</div>
+      <div class="feat-icon-wrap"><i class="fa-solid fa-pen-nib" style="color:#f7724f"></i></div>
+      <div class="feat-cat">Administrasi</div>
+      <h3 class="feat-name">eOFFICE</h3>
+      <p class="feat-body">Persuratan elektronik yang cepat dan efisien antar instansi.</p>
+    </div>
+
+    <div class="feat-item">
+      <div class="feat-item-bg"><i class="fa-solid fa-location-dot" style="color:#2ecc71"></i></div>
+      <div class="feat-top-line" style="background:linear-gradient(90deg,#2ecc71,#1a9e52)"></div>
+      <div class="feat-num">03 — ABSENSI</div>
+      <div class="feat-icon-wrap"><i class="fa-solid fa-location-dot" style="color:#2ecc71"></i></div>
+      <div class="feat-cat">Kehadiran</div>
+      <h3 class="feat-name">PRESENSI</h3>
+      <p class="feat-body">Presensi berbasis GPS yang akurat dan terverifikasi otomatis.</p>
+    </div>
+
+    <div class="feat-item">
+      <div class="feat-item-bg"><i class="fa-solid fa-calendar-days" style="color:#f7c94f"></i></div>
+      <div class="feat-top-line" style="background:linear-gradient(90deg,#f7c94f,#d4991a)"></div>
+      <div class="feat-num">04 — EVENT</div>
+      <div class="feat-icon-wrap"><i class="fa-solid fa-calendar-days" style="color:#f7c94f"></i></div>
+      <div class="feat-cat">Jadwal</div>
+      <h3 class="feat-name">KEGIATAN</h3>
+      <p class="feat-body">Manajemen jadwal dan presensi event kegiatan dinas secara real-time.</p>
+    </div>
+
+    <div class="feat-item">
+      <div class="feat-item-bg"><i class="fa-solid fa-envelope" style="color:#a855f7"></i></div>
+      <div class="feat-top-line" style="background:linear-gradient(90deg,#a855f7,#7e22ce)"></div>
+      <div class="feat-num">05 — EMAIL</div>
+      <div class="feat-icon-wrap"><i class="fa-solid fa-envelope" style="color:#a855f7"></i></div>
+      <div class="feat-cat">Komunikasi</div>
+      <h3 class="feat-name">EMAIL ASN</h3>
+      <p class="feat-body">Email resmi ASN terintegrasi dalam satu platform terpadu.</p>
+    </div>
+
+    <div class="feat-item">
+      <div class="feat-item-bg"><i class="fa-solid fa-users" style="color:#f74f9e"></i></div>
+      <div class="feat-top-line" style="background:linear-gradient(90deg,#f74f9e,#b01a6c)"></div>
+      <div class="feat-num">06 — DATA</div>
+      <div class="feat-icon-wrap"><i class="fa-solid fa-users" style="color:#f74f9e"></i></div>
+      <div class="feat-cat">Kepegawaian</div>
+      <h3 class="feat-name">SIMPEG</h3>
+      <p class="feat-body">Data ASN terintegrasi dan lengkap, dapat diakses kapan saja.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     TENTANG
+══════════════════════════ -->
+<section id="tentang">
+  <div class="about-wrap">
+
+    <div class="sr left">
+      <div class="a-eyebrow">Tentang Platform</div>
+      <h2 class="about-title">PORTAL<br>KEPEGAWAIAN<br><em>MODERN</em></h2>
+      <p class="about-body">
+        eManuntung mengintegrasikan berbagai kebutuhan <strong>ASN Kota Balikpapan</strong>
+        dalam satu platform. Dari pelaporan kinerja hingga presensi GPS,
+        terhubung langsung dengan <strong>sistem nasional BKN</strong>.
+      </p>
+      <div class="pillars">
+        <div class="pillar"><span class="p-num">01</span><span class="p-text">Resmi dari BKPSDM Kota Balikpapan</span></div>
+        <div class="pillar"><span class="p-num">02</span><span class="p-text">Tersedia untuk perangkat Android</span></div>
+        <div class="pillar"><span class="p-num">03</span><span class="p-text">Terintegrasi sistem nasional BKN</span></div>
+        <div class="pillar"><span class="p-num">04</span><span class="p-text">Aman, terenkripsi & terpercaya</span></div>
+      </div>
+    </div>
+
+    <div class="sr right">
+      <div class="tl-wrap">
+        <div class="tl-item">
+          <p class="tl-year">2021</p>
+          <h4 class="tl-title">INISIASI & PERANCANGAN</h4>
+          <p class="tl-body">BKPSDM memulai kajian dan perancangan portal kepegawaian digital pertama Kota Balikpapan.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2022</p>
+          <h4 class="tl-title">PELUNCURAN PERDANA</h4>
+          <p class="tl-body">eManuntung resmi diluncurkan dan mulai digunakan ASN di seluruh SKPD Kota Balikpapan.</p>
+        </div>
+        <div class="tl-item">
+          <p class="tl-year">2024</p>
+          <h4 class="tl-title">EKSPANSI FITUR</h4>
+          <p class="tl-body">Penambahan Presensi GPS, eKinerja, Email ASN, dan integrasi penuh dengan sistem BKN.</p>
+        </div>
+        <div class="tl-item active">
+          <p class="tl-year">2026 — Sekarang</p>
+          <h4 class="tl-title">PLATFORM TERPADU</h4>
+          <p class="tl-body">6 layanan terintegrasi, melayani lebih dari 6.000 ASN dan mendukung smart city Balikpapan.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="about-quote sr">
+    <blockquote class="aq-q">
+      "Lebih dari sekadar aplikasi —
+      <strong>eManuntung adalah komitmen</strong>
+      untuk melayani lebih baik, setiap hari."
+    </blockquote>
+    <div class="aq-seal">
+      <i class="fa-solid fa-building-columns"></i>
+      <div>
+        <strong>Pemerintah Kota Balikpapan</strong>
+        <span>BKPSDM — Layanan Kepegawaian</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════
+     DOWNLOAD
+══════════════════════════ -->
+<section id="unduh">
+  <div class="unduh-bg-glyph">DL</div>
+
+  <div class="unduh-inner">
+    <div class="sr left">
+      <div class="u-eyebrow">
+        <i class="fa-solid fa-circle" style="font-size:5px"></i> Unduh Sekarang
+      </div>
+      <h2 class="unduh-title">UNDUH<br><em>APLIKASI</em><br>SEKARANG</h2>
+      <p class="unduh-desc">
+        Tersedia di Google Play Store dan App Store.
+        Akses layanan kepegawaian kapan saja, di mana saja.
+      </p>
+      <div class="dl-btns">
+        <a href="https://play.google.com/store/apps?hl=id" class="dl-btn">
+          <i class="fa-brands fa-google-play"></i>
+          <div>
+            <span class="dl-sub">Download di</span>
+            <span class="dl-name">GOOGLE PLAY</span>
+          </div>
+        </a>
+        <a href="https://www.apple.com/id/app-store/" class="dl-btn">
+          <i class="fa-brands fa-apple"></i>
+          <div>
+            <span class="dl-sub">Download di</span>
+            <span class="dl-name">APP STORE</span>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="unduh-right sr right">
+    
+</section>
+
+<!-- ══════════════════════════
+     FOOTER
+══════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="f-name">e<em>Manuntung</em></div>
+      <p class="f-desc">Aplikasi Portal Layanan Kepegawaian<br>Pemerintah Kota Balikpapan.</p>
+      <ul class="f-contacts">
+        <li>📍 Jl. Jenderal Sudirman No.1 RT.13, Balikpapan</li>
+        <li>📞 0542-421500, 421600, 734115</li>
+        <li>✉️ admin@balikpapan.go.id</li>
+      </ul>
+    </div>
+
+    <div class="f-col">
+      <div class="f-col-head">Navigasi</div>
+      <ul>
+        <li><a href="#home">Beranda</a></li>
+        <li><a href="#fitur">Fitur</a></li>
+        <li><a href="#tentang">Tentang</a></li>
+        <li><a href="#unduh">Unduh</a></li>
+      </ul>
+    </div>
+
+    <div class="f-col">
+      <div class="f-col-head">Kebijakan</div>
+      <ul>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Terms & Condition</a></li>
+        <li><a href="#">Bantuan</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-btm">
+    <p>© 2026 <span>eManuntung</span>. All Rights Reserved.</p>
+    <p>Pemerintah Kota Balikpapan — <span>BKPSDM</span></p>
+  </div>
+</footer>
+
+<!-- Script -->
+<script src="script.js"></script>
+</body>
+</html>
