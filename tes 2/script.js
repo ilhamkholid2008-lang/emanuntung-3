@@ -5,7 +5,6 @@ const html = document.documentElement;
 const darkToggle = document.getElementById('darkToggle');
 const darkIcon = document.getElementById('darkIcon');
 
-// Load saved theme
 const savedTheme = localStorage.getItem('theme') || 'light';
 html.setAttribute('data-theme', savedTheme);
 darkIcon.textContent = savedTheme === 'dark' ? 'light_mode' : 'dark_mode';
@@ -24,15 +23,10 @@ darkToggle.addEventListener('click', () => {
 const navbar = document.getElementById('navbar');
 
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    navbar.classList.add('scrolled');
-  } else {
-    navbar.classList.remove('scrolled');
-  }
+  navbar.classList.toggle('scrolled', window.scrollY > 20);
 
-  // Update active nav link based on scroll position
-  // GANTI
-const sections = ['hero', 'fitur',, 'tentang', 'support'];
+  // FIX: ID section disesuaikan dengan HTML, hapus double comma
+  const sections = ['hero', 'features', 'guidelines'];
   const navLinks = document.querySelectorAll('.nav-link');
 
   sections.forEach((id, i) => {
@@ -59,7 +53,6 @@ document.querySelectorAll('.nav-link').forEach(link => {
       if (target) {
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
-      // Close mobile menu if open
       document.getElementById('navLinks').classList.remove('open');
     }
   });
@@ -75,7 +68,6 @@ hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('open');
 });
 
-// Close menu on outside click
 document.addEventListener('click', (e) => {
   if (!navbar.contains(e.target)) {
     navLinks.classList.remove('open');
@@ -89,7 +81,6 @@ const track = document.getElementById('cardsTrack');
 const btnLeft = document.getElementById('sliderLeft');
 const btnRight = document.getElementById('sliderRight');
 const dots = document.querySelectorAll('.dot');
-const cards = document.querySelectorAll('.feature-card');
 const SCROLL_AMOUNT = 320;
 
 btnLeft.addEventListener('click', () => {
@@ -100,18 +91,16 @@ btnRight.addEventListener('click', () => {
   track.scrollBy({ left: SCROLL_AMOUNT, behavior: 'smooth' });
 });
 
-// Update dots on scroll
 track.addEventListener('scroll', () => {
   const maxScroll = track.scrollWidth - track.clientWidth;
+  if (maxScroll <= 0) return;
   const scrollRatio = track.scrollLeft / maxScroll;
   const dotIndex = Math.round(scrollRatio * (dots.length - 1));
-
   dots.forEach((dot, i) => {
     dot.classList.toggle('active', i === dotIndex);
   });
 });
 
-// Dot click to scroll
 dots.forEach((dot, i) => {
   dot.addEventListener('click', () => {
     const maxScroll = track.scrollWidth - track.clientWidth;
@@ -122,47 +111,49 @@ dots.forEach((dot, i) => {
 
 // ===========================
 // PROGRESS BAR ANIMATION
+// FIX: guard null agar tidak crash jika elemen tidak ada
 // ===========================
 const progressFill = document.getElementById('progressFill');
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      progressFill.style.width = '75%';
-    }
-  });
-}, { threshold: 0.3 });
-
-if (progressFill) observer.observe(progressFill);
+if (progressFill) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        progressFill.style.width = '75%';
+      }
+    });
+  }, { threshold: 0.3 });
+  observer.observe(progressFill);
+}
 
 // ===========================
 // REFRESH STATS BUTTON
+// FIX: guard null agar tidak crash dan blokir modal/FAQ
 // ===========================
 const refreshBtn = document.getElementById('refreshStats');
 const statActive = document.getElementById('statActive');
 const statDone = document.getElementById('statDone');
 
-refreshBtn.addEventListener('click', () => {
-  // Spin animation
-  refreshBtn.classList.add('spinning');
-  setTimeout(() => refreshBtn.classList.remove('spinning'), 600);
+if (refreshBtn && statActive && statDone) {
+  refreshBtn.addEventListener('click', () => {
+    refreshBtn.classList.add('spinning');
+    setTimeout(() => refreshBtn.classList.remove('spinning'), 600);
 
-  // Simulate new data
-  const newActive = (8000 + Math.floor(Math.random() * 1000)).toLocaleString();
-  const newDone = (1000 + Math.floor(Math.random() * 500)).toLocaleString();
+    const newActive = (8000 + Math.floor(Math.random() * 1000)).toLocaleString();
+    const newDone = (1000 + Math.floor(Math.random() * 500)).toLocaleString();
 
-  statActive.style.opacity = '0';
-  statDone.style.opacity = '0';
+    statActive.style.opacity = '0';
+    statDone.style.opacity = '0';
 
-  setTimeout(() => {
-    statActive.textContent = newActive;
-    statDone.textContent = newDone;
-    statActive.style.transition = 'opacity 0.3s';
-    statDone.style.transition = 'opacity 0.3s';
-    statActive.style.opacity = '1';
-    statDone.style.opacity = '1';
-  }, 300);
-});
+    setTimeout(() => {
+      statActive.textContent = newActive;
+      statDone.textContent = newDone;
+      statActive.style.transition = 'opacity 0.3s';
+      statDone.style.transition = 'opacity 0.3s';
+      statActive.style.opacity = '1';
+      statDone.style.opacity = '1';
+    }, 300);
+  });
+}
 
 // ===========================
 // MODAL SIGN IN & REGISTER
@@ -181,32 +172,28 @@ const closeAllModals = () => {
   document.body.style.overflow = '';
 };
 
-// Open buttons
 document.getElementById('btnSignIn').addEventListener('click', () => openModal(modalSignIn));
 document.getElementById('btnRegister').addEventListener('click', () => openModal(modalRegister));
 
-// Close buttons
 document.getElementById('closeSignIn').addEventListener('click', closeAllModals);
 document.getElementById('closeRegister').addEventListener('click', closeAllModals);
 
-// Switch between modals
 document.getElementById('switchToRegister').addEventListener('click', () => openModal(modalRegister));
 document.getElementById('switchToSignIn').addEventListener('click', () => openModal(modalSignIn));
 
-// Close on overlay click
 [modalSignIn, modalRegister].forEach(modal => {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeAllModals();
   });
 });
 
-// Close on Escape key
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') closeAllModals();
 });
 
-// tentang v2
+// ===========================
 // FAQ TOGGLE
+// ===========================
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
   const isOpen = item.classList.contains('open');
