@@ -2490,3 +2490,29 @@ input { font-family: inherit; }
     padding: 10px 0;
   }
 }
+
+/*perbaiki card di mobile*/
+
+@media (max-width: 768px) {
+  .slider-wrapper {
+    padding: 0;
+  }
+
+  .slider-btn {
+    display: none;
+  }
+
+  .cards-track {
+    padding: 8px 20px 16px;
+    gap: 14px;
+  }
+
+  .feature-card {
+    min-width: 85vw;
+    max-width: 85vw;
+  }
+
+  .slider-dots {
+    margin-top: 12px;
+  }
+}
