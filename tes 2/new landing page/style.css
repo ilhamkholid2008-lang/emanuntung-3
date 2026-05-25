@@ -2446,3 +2446,47 @@ input { font-family: inherit; }
   opacity: 0.25;
 }
 
+/* hide gambar di mobile */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 20px 48px;
+    min-height: auto;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .hero-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    width: 100%;
+    text-align: left;
+    order: 1;
+  }
+
+  .hero-image-wrap {
+    display: none;
+  }
+
+  .hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .cta-store {
+    width: 100%;
+    min-width: unset;
+    justify-content: center;
+  }
+
+  .cta-learn {
+    justify-content: flex-start;
+    padding: 10px 0;
+  }
+}
